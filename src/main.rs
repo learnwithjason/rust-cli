@@ -13,35 +13,35 @@ fn main() {
         .author("Jason Lengstorf <jason@lengstorf.com>")
         .about("Helps you build a burger correctly.")
         .arg(
-            Arg::new("style")
+            Arg::with_name("style")
                 .long("style")
                 .value_name("BURGER_STYLE")
-                .about("What type of burger do you want?")
+                .help("What type of burger do you want?")
                 .takes_value(true),
         )
         .arg(
-            Arg::new("order_type")
+            Arg::with_name("order_type")
                 .required(true)
                 .long("order-type")
                 .value_name("ORDER_TYPE")
-                .about("Dine-in, pickup, or delivery?")
+                .help("Dine-in, pickup, or delivery?")
                 .takes_value(true),
         )
         .arg(
-            Arg::new("address")
+            Arg::with_name("address")
                 .long("address")
-                .required_if_eq("order_type", "delivery")
+                .required_if("order_type", "delivery")
                 .value_name("address")
-                .about("Where do you live?")
+                .help("Where do you live?")
                 .takes_value(true),
         )
         .arg(
-            Arg::new("toppings")
-                .short('t')
+            Arg::with_name("toppings")
+                .short("t")
                 .long("topping")
                 .value_name("TOPPING")
-                .about("What toppings do you want on your burger?")
-                .multiple_occurrences(true)
+                .help("What toppings do you want on your burger?")
+                .multiple(true)
                 .takes_value(true),
         )
         .get_matches();

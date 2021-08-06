@@ -21,6 +21,12 @@ The Rust Language ecosystem is gaining steam as a powerful, friendly, and FAST w
 
 &nbsp;
 
+## How to run or test the cli ?
+
+```
+cargo run -- --style smash --order-type delivery --address "2120 Brooks Dr #321, District Heights, MD, 20747" -t lettuce -t onion -t paneer
+```
+
 ## More Information
 
 - [Watch this app get built live + see links and additional resources][episode]
